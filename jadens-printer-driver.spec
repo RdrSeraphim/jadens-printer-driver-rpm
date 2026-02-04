@@ -5,7 +5,7 @@ Summary:        CUPS support for JADENS thermal printing devices
 License:        Proprietary
 Source0:        %{name}-%{version}.tar.gz
 
-BuildArch:      x86_64
+ExclusiveArch:  x86_64
 BuildRequires:  cups-devel
 
 %description
