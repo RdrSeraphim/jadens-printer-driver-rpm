@@ -31,23 +31,23 @@ jobs:
       - name: Rename filter binaries
         run: |
           cd main
-          mv opt/jadens-printer-driver/amd64/rastertolabel opt/jadens-printer-driver/amd64/jadens_printer_filter
-          mv opt/jadens-printer-driver/arm64/rastertolabel opt/jadens-printer-driver/arm64/jadens_printer_filter
+          mv dist/opt/jadens-printer-driver/amd64/rastertolabel dist/opt/jadens-printer-driver/amd64/jadens_printer_filter
+          mv dist/opt/jadens-printer-driver/arm64/rastertolabel dist/opt/jadens-printer-driver/arm64/jadens_printer_filter
           cd ..
       - name: Create source tarballs
         run: |
           export NAME_AND_VERSION="$(cat main/jadens-printer-driver.spec" | grep Name | cut -d' ' -f12)-$(cat main/jadens-printer-driver.spec | grep Version | cut -d' ' -f9)"
           mkdir tarball
           cd tarball
-          cp -R ../main/usr .
+          cp -R ../main/dist/usr .
 
           # x86_64
-          cp ../main/opt/jadens-printer-driver/amd64/jadens_printer_filter ./usr/lib/cups/filter
+          cp ../main/dist/opt/jadens-printer-driver/amd64/jadens_printer_filter ./usr/lib/cups/filter
           tar czvf ../sources/$NAME_AND_VERSION-x86_64.tar.gz usr
           rm usr/lib/cups/filter/jadens_printer_filter
           
           # aarch64
-          cp ../main/opt/jadens-printer-driver/arm64/jadens_printer_filter ./usr/lib/cups/filter
+          cp ../main/dist/opt/jadens-printer-driver/arm64/jadens_printer_filter ./usr/lib/cups/filter
           tar czvf ../sources/$NAME_AND_VERSION-aarch64.tar.gz usr
 
           cd ..
