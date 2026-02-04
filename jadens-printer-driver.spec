@@ -18,11 +18,11 @@ CUPS support for JADENS thermal printing devices. Converted from Debian package.
 
 %prep
 %ifarch x86_64
-%setup -q -T -b 0 -c
+%setup -q -b 0 -c
 %endif
 
 %ifarch aarch64
-%setup -q -T -b 1 -c
+%setup -q -b 1 -c
 %endif
 
 %build
