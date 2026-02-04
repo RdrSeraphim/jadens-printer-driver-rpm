@@ -27,6 +27,7 @@ jobs:
           cd sources
           rm *.tar.gz
           cd ..
+        continue-on-error: true
       - name: Rename filter binaries
         run: |
           cd main
