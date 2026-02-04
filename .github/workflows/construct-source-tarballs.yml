@@ -41,8 +41,6 @@ jobs:
           cd tarball
           cp -R ../main/dist/usr .
           
-          find .
-
           # x86_64
           cp ../main/dist/opt/jadens-printer-driver/amd64/jadens_printer_filter ./usr/lib/cups/filter
           tar czvf ../sources/$NAME_AND_VERSION-x86_64.tar.gz usr
