@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: JADENS Official Support
+    url: https://support.jadens.com/support/home
+    about: Take questions about hardware and Linux support proper to them. Even though this is an unofficial distribution of their software, it is identical to what they provide to Debian/Ubuntu users and they should have no qualms.

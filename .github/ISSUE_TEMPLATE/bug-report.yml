@@ -1,0 +1,35 @@
+name: "Bug Report"
+description: For bugs specific to the packaging for the supported RPM-based distros.
+title: "Issue Title"
+labels: ["bug"]
+
+body:
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm the following to prevent issues ending up in the wrong place.
+      options:
+        - label: I understand that this is making a bug report for the packaging of the software, not the software itself.
+          required: true
+  - type: textarea
+    id: distro
+    attributes:
+      label: OS/LSB Release
+      description: The output of /etc/os-release or `lsb_release -a`. If your distro doesn't have either, you can just put the distro name and version here.
+    validations:
+      required: true
+  - type: input
+    id: kernel-arch
+    attributes:
+      label: Kernel & Architecture
+      description: The output of `uname -a`.
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: Be sure to include how you got to the bug, so we can reproduce it.
+    validations:
+      required: true

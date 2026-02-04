@@ -1,0 +1,27 @@
+name: "Request a Distro"
+description: Request supported builds for an RPM-based distro.
+title: "Issue Title"
+labels: ["distro-request"]
+
+body:
+  - type: textarea
+    id: distro
+    attributes:
+      label: OS/LSB Release
+      description: The output of /etc/os-release or `lsb_release -a`. If your distro doesn't have either, you can just put the distro name and version here.
+    validations:
+      required: true
+  - type: input
+    id: kernel-arch
+    attributes:
+      label: Kernel & Architecture
+      description: The output of `uname -a`.
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Anything else to add?
+    validations:
+      required: false
