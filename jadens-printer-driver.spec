@@ -7,11 +7,11 @@ Summary:        CUPS support for JADENS thermal printing devices
 License:        Proprietary
 Requires:       cups
 ExclusiveArch:  x86_64 aarch64
+
 # These are the only archs that JADENS provides for that is supported by Fedora.
 # JADENS has folder structures and postinst scripts for x86 but no files, so we can't add it sadly.
-Source0:        https://raw.rawgit.net/RdrSeraphim/jadens-printer-driver-rpm/sources/%{name}-%{version}-x86_64.tar.gz
-Source1:        https://raw.rawgit.net/RdrSeraphim/jadens-printer-driver-rpm/sources/%{name}-%{version}-aarch64.tar.gz
-
+Source0:        https://rawcdn.rawgit.net/RdrSeraphim/jadens-printer-driver-rpm/e996146472fd364f6b035c852c5cddeb103acdc3/jadens-printer-driver-3.3.5.497-x86_64.tar.gz
+Source1:        https://rawcdn.rawgit.net/RdrSeraphim/jadens-printer-driver-rpm/e996146472fd364f6b035c852c5cddeb103acdc3/jadens-printer-driver-3.3.5.497-aarch64.tar.gz
 %description
 CUPS support for JADENS thermal printing devices. Converted from Debian package.
 
