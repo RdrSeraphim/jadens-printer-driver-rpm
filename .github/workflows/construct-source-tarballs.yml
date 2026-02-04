@@ -36,7 +36,7 @@ jobs:
           cd ..
       - name: Create source tarballs
         run: |
-          export NAME_AND_VERSION="$(cat main/jadens-printer-driver.spec" | grep Name | cut -d' ' -f12)-$(cat main/jadens-printer-driver.spec | grep Version | cut -d' ' -f9)"
+          export NAME_AND_VERSION="$(cat main/jadens-printer-driver.spec | grep Name | cut -d' ' -f12)-$(cat main/jadens-printer-driver.spec | grep Version | cut -d' ' -f9)"
           mkdir tarball
           cd tarball
           cp -R ../main/dist/usr .
