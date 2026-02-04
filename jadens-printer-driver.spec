@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:           jadens-printer-driver
 Version:        3.3.5.497
 Release:        %autorelease
@@ -15,20 +17,21 @@ CUPS support for JADENS thermal printing devices. Converted from Debian package.
 %setup -q -c
 
 %build
+# Nothing needed to build.
 
 %install
-mkdir -p %{buildroot}%{_libdir}/cups/filter
+mkdir -p %{buildroot}/usr/lib/cups/filter
 mkdir -p %{buildroot}%{_datadir}/cups/model/Jadens
 
-cp -p usr/lib/cups/filter/jadens_printer_filter %{buildroot}%{_libdir}/cups/filter/
+cp -p usr/lib/cups/filter/jadens_printer_filter %{buildroot}/usr/lib/cups/filter/
 cp -p usr/share/cups/model/Jadens/*.ppd %{buildroot}%{_datadir}/cups/model/Jadens/
 
-chmod 755 %{buildroot}%{_libdir}/cups/filter/jadens_printer_filter
+chmod 755 %{buildroot}/usr/lib/cups/filter/jadens_printer_filter
 
 %files
-%dir %{_libdir}/cups
-%dir %{_libdir}/cups/filter
-attr(755,root,root) %{_libdir}/cups/filter/jadens_printer_filter
+%dir /usr/lib/cups
+%dir /usr/lib/cups/filter
+%attr(755,root,root) /usr/lib/cups/filter/jadens_printer_filter
 %dir %{_datadir}/cups
 %dir %{_datadir}/cups/model
 %dir %{_datadir}/cups/model/Jadens
